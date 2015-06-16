@@ -1,0 +1,5 @@
+E:\Projects\PBS Backup\KnockOut Example\KnockOut_MVC\ValueObjects\bin\Release\ValueObjects.dll.config
+E:\Projects\PBS Backup\KnockOut Example\KnockOut_MVC\ValueObjects\bin\Release\ValueObjects.dll
+E:\Projects\PBS Backup\KnockOut Example\KnockOut_MVC\ValueObjects\bin\Release\ValueObjects.pdb
+E:\Projects\PBS Backup\KnockOut Example\KnockOut_MVC\ValueObjects\obj\Release\ValueObjects.dll
+E:\Projects\PBS Backup\KnockOut Example\KnockOut_MVC\ValueObjects\obj\Release\ValueObjects.pdb

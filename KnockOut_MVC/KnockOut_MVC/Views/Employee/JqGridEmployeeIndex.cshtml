@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "JqGridEmployeeIndex";
+    Layout = null;
+}
+
+<link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />        
+<link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/jquery.jqGrid.js"></script>*@ 
+<script src="~/Scripts/jquery.jqGrid.min.js"></script>   
+<script src="~/Scripts/grid.locale-en.js"></script>
+
+<h2>Employee Index</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //$.ajax({
+        //    type: "GET",
+        //    url: "http://192.168.31.44:5050/api/employee",
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    success: function (data) {
+        //        debugger;
+        //        //  Employees = getDataInArray(data); 
+        //        //Employees = data;
+        //        //self.Data(data);
+        //    },
+        //    error: function (err) {
+        //        debugger;
+        //        alert("Error : " + err.status + "   " + err.statusText);
+        //    }
+        //});
+
+        var lastsel2;        
+        $("#EmployeeTbl").jqGrid({
+            //url:"/Employee/GetEmployeeInformation/",
+            url: "http://localhost:56608/api/employee",
+            //mytype: 'GET',
+            datatype: "json",
+            //jsonReader: {
+            //    root: "data",
+            //    page: "currentPage",
+            //    total: "totalPages",
+            //    records: "totalRecords",
+            //    repeatitems: false,
+            //    cell: "cell",
+            //    id: "id",
+            //},
+
+            //jsonReader: {
+            //    repeatitems: false,
+            //    page: function () { return 1; },
+            //    root: function (obj) { return obj; },
+            //    records: function (obj) { return obj.length; }
+            //},
+            //ajaxGridOptions: { contentType: 'application/json; charset=utf-8' },
+            //jsonReader: { root: "Data" },   
+            onSelectRow: function (id) {
+                if (id && id !== lastsel2) {
+                    jQuery('#EmployeeTbl').jqGrid('restoreRow', lastsel2);
+                    jQuery('#EmployeeTbl').jqGrid('editRow', id, true);
+                    lastsel2 = id;
+                }
+            },
+            rowNum: 10,
+            rowList: [10, 20, 30],
+            colNames: ['First Name', 'Last Name', 'Gender', 'Mobile', 'Graduation', 'Post Graduation', 'E-Mail', 'Date of Birth', 'Division'],
+            colModel: [
+            { name: 'FirstName', index: 'FirstName', width: 20, stype: 'text', search: true, searchoptions: { sopt: ['cn', 'eq'] }, searchrules: { required: true } },
+            { name: 'LastName', index: 'LastName', width: 20, stype: 'text' },
+            { name: 'Gender', index: 'Gender', width: 20, stype: 'text' },
+            { name: 'MobileNumber', index: 'MobileNumber', width: 20, stype: 'text' },
+            { name: 'Graduation', index: 'Graduation', width: 20, stype: 'text' },
+            { name: 'PostGraduation', index: 'PostGraduation', width: 20, stype: 'text' },
+            { name: 'EMail', index: 'EMail', width: 30, stype: 'text' },
+            { name: 'DateOfBirth', index: 'DateOfBirth', width: 20, stype: 'text' },
+            { name: 'ExpertiseId', index: 'ExpertiseId', width: 20, stype: 'text' }
+            ],
+            autowidth: true,
+            forceFit: false,
+            viewrecords: true,
+            //height: 'auto',
+            pager: "",
+            caption: "Employee Details",
+
+        })
+           .navGrid('#EmployeeTblPager', {
+               del: false, add: false, edit: false, refresh: false, searchtext: "Search",
+               searchtitle: "Click here to search"
+           },
+       { width: 400 }, // default settings for edit
+       {}, // default settings for add
+       {}, // delete instead that del:false we need this
+       {
+           //multipleSearch: true,
+           caption: "Search Employee",
+           Find: "Search",
+           searchOnEnter: true,
+           modal: true,
+           closeAfterSearch: true,
+           closeOnEscape: true,
+           width: "350",
+           onReset: function () {
+               var jqModal = true;
+               $.jgrid.hideModal("#visu" + this.id,
+                   { gb: "#gbox_" + this.id, jqm: jqModal, onClose: null });
+           }
+       }, // search options
+       {} /* view parameters*/
+     );
+    });
+</script>
+
+<table id="EmployeeTbl"></table>
+<div id="EmployeeTblPager">
+    @*<input type="BUTTON" id="bedata" value="Edit Selected" />*@
+</div>
+

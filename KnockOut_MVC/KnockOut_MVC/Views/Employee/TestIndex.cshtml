@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/knockout-3.1.0.js"></script>
+<script src="~/Scripts/knockout-3.1.0.debug.js"></script>
+<script src="~/ViewModel/TestViewModel.js"></script>
+
+<br /><br /><br />
+<table style="width:20%">    
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="border:solid">            
+            <ul class="unstyled" data-bind="foreach: CountryList">
+                <li>
+                    <label>
+                        <input type="checkbox" data-bind="checked: Value" />
+                        <span data-bind="text: Key"></span>
+                    </label>
+                </li>
+            </ul>
+            @*<select id="ddlCountry" name="ddlCountry"
+                    data-bind="options: CountryList, optionsValue:'Key', optionsText:'Value', value:ID"></select>*@
+        </td>
+        <td>
+            <input type="button" value=">"/>
+        </td>
+    </tr>
+</table>

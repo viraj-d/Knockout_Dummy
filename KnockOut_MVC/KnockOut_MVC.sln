@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockOut_MVC", "KnockOut_MVC\KnockOut_MVC.csproj", "{750B3B03-E4A5-4AED-9A3D-C30C0D5BF03A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{06B1A0E3-E9E4-41ED-852B-79A956C633DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueObjects", "ValueObjects\ValueObjects.csproj", "{CA40A515-7982-459A-85B6-61A00EA52AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knockout_Listbox", "Knockout_Listbox\Knockout_Listbox.csproj", "{639657BA-676D-4E86-A8AD-F5209D20E3F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{750B3B03-E4A5-4AED-9A3D-C30C0D5BF03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750B3B03-E4A5-4AED-9A3D-C30C0D5BF03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750B3B03-E4A5-4AED-9A3D-C30C0D5BF03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750B3B03-E4A5-4AED-9A3D-C30C0D5BF03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B1A0E3-E9E4-41ED-852B-79A956C633DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B1A0E3-E9E4-41ED-852B-79A956C633DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B1A0E3-E9E4-41ED-852B-79A956C633DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B1A0E3-E9E4-41ED-852B-79A956C633DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA40A515-7982-459A-85B6-61A00EA52AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA40A515-7982-459A-85B6-61A00EA52AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA40A515-7982-459A-85B6-61A00EA52AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA40A515-7982-459A-85B6-61A00EA52AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{639657BA-676D-4E86-A8AD-F5209D20E3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639657BA-676D-4E86-A8AD-F5209D20E3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639657BA-676D-4E86-A8AD-F5209D20E3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639657BA-676D-4E86-A8AD-F5209D20E3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

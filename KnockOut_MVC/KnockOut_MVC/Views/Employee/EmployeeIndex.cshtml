@@ -1,0 +1,115 @@
+﻿@model KnockOut_MVC.Models.Employee
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/knockout-3.1.0.js"></script>
+<script src="~/Scripts/knockout-3.1.0.debug.js"></script>
+@*<script src="@Url.Content("~/Scripts/json2.min.js")" type="text/javascript"></script>*@
+<script src="~/ViewModel/EmployeeViewModel.js"></script>
+@{
+    ViewBag.Title = "EmployeeIndex";
+}
+
+@*<h2>EmployeeIndex</h2>*@
+
+<form id="frmEmployee">
+    <table>
+        <tr>
+            <td>
+                <label>First Name:</label>
+            </td>
+            <td>
+                <input type="text" id="txtFirstName" name="txtFirstName" data-bind="value:FirstName" />
+            </td>
+
+            <td>
+                <label>Last Name:</label>                
+            </td>
+            <td>
+                <input type="text" id="txtLastName" name="txtLastName" data-bind="value:LastName" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Full Name:</label>                
+            </td>
+            <td>
+                <input type="text" id="txtFulltName" name="txtFulltName" data-bind="value:FullName" />
+            </td>
+
+            <td>
+                <label>E-Mail:</label>                
+            </td>
+            <td>
+                <input type="email" id="txtEmail" name="txtEmail" data-bind="value:EMail" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>DOB:</label>                                
+            </td>
+            <td>
+                <input type="datetime" id="txtBirthDate" name="txtBirthDate" data-bind="value:DateOfBirth" />
+            </td>
+
+            <td>
+                <label>Gender:</label>                
+            </td>            
+            <td>
+                <input type="radio" id="rdoMale" name="gender"
+                       value="0" data-bind="checked:Gender" />Male
+                <input type="radio" id="rdoFeMale" name="gender"
+                       value="1" data-bind="checked:Gender" />FeMale
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Education:</label>                
+            </td> 
+            <td>
+                <input type="checkbox" value="graduation" id="chkGraduation"
+                       name="chkGraduation" data-bind="checked:Graduation" />Graduation
+                <input type="checkbox" value="postGraduation"
+                       id="chkPostGraduation" name="chkPostGraduation"
+                       data-bind="checked:PostGraduation" />PostGraduation
+            </td>
+            
+            <td>
+                <label>Mobile:</label>                
+            </td>           
+            <td>
+                <input type="number" id="txtMobNo" name="txtMobNo" data-bind="value:MobileNumber">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Expertise:</label>                
+            </td>
+            <td>                
+                @*<select data-bind="options: DivisionList, optionsText: 'Name', optionsCaption: 'Select...', value: Division"></select>
+                <p data-bind="with: Division">You selected <span data-bind="text: Name"></span>, Division <span data-bind="text: Division"></span></p>*@
+
+                <select id="ddlDepartment" name="ddlDepartment"
+                        data-bind="options: DivisionList, optionsValue:'Key', optionsText:'Value', value:ExpertiseId"></select>
+
+                @*<select id="ddlDepartment" name="ddlDepartment"
+                        data-bind="options: $root.ExpertiseList, optionsValue:'Id', optionsText:'Name', value:ExpertiseId"></select>*@
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="button" id="btnSubmit" value="Save" data-bind="click: Submit" />  
+            </td>
+
+            <td>
+                <input type="button" id="btnReset" value="New" data-bind="click: Reset" />
+            </td>
+        </tr>
+    </table>
+
+</form>
+
